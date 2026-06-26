@@ -7,6 +7,7 @@ interface FormData {
   email: string;
   brokerage: string;
   zip: string;
+  website: string; // honeypot
 }
 
 interface FormErrors {
@@ -22,10 +23,12 @@ export default function WaitlistForm() {
     email: "",
     brokerage: "",
     zip: "",
+    website: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const validate = (data: FormData): FormErrors => {
     const next: FormErrors = {};
@@ -44,13 +47,14 @@ export default function WaitlistForm() {
 
   const handleChange = (field: keyof FormData, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
-    if (errors[field]) {
+    if (errors[field as keyof FormErrors]) {
       setErrors((prev) => {
         const next = { ...prev };
-        delete next[field];
+        delete next[field as keyof FormErrors];
         return next;
       });
     }
+    if (errorMessage) setErrorMessage(null);
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -61,10 +65,38 @@ export default function WaitlistForm() {
       return;
     }
     setLoading(true);
-    // TODO: Wire to backend / CRM endpoint (NAB-84)
-    await new Promise((res) => setTimeout(res, 800));
-    setSubmitted(true);
-    setLoading(false);
+    setErrorMessage(null);
+
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          brokerage: form.brokerage,
+          zip: form.zip,
+          website: form.website,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        if (data.errors) {
+          setErrors(data.errors);
+        } else {
+          setErrorMessage(data.message || "Something went wrong. Please try again.");
+        }
+        return;
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setErrorMessage("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -101,6 +133,18 @@ export default function WaitlistForm() {
       className="rounded-xl bg-white/10 p-8 backdrop-blur text-left"
       noValidate
     >
+      {/* Honeypot */}
+      <div className="hidden" aria-hidden="true">
+        <input
+          type="text"
+          name="website"
+          value={form.website}
+          onChange={(e) => handleChange("website", e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-4">
         <div className="sm:col-span-1">
           <label htmlFor="name" className="sr-only">
@@ -116,9 +160,7 @@ export default function WaitlistForm() {
             onChange={(e) => handleChange("name", e.target.value)}
             aria-invalid={errors.name ? "true" : "false"}
             aria-describedby={errors.name ? "name-error" : undefined}
-            className={`block w-full rounded-lg border-0 px-4 py-3 text-foreground shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-accent sm:text-sm sm:leading-6 ${
-              errors.name ? "ring-red-300" : "ring-white/20"
-            }`}
+            className={}
           />
           {errors.name && (
             <p id="name-error" className="mt-1 text-sm text-red-300">
@@ -140,9 +182,7 @@ export default function WaitlistForm() {
             onChange={(e) => handleChange("email", e.target.value)}
             aria-invalid={errors.email ? "true" : "false"}
             aria-describedby={errors.email ? "email-error" : undefined}
-            className={`block w-full rounded-lg border-0 px-4 py-3 text-foreground shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-accent sm:text-sm sm:leading-6 ${
-              errors.email ? "ring-red-300" : "ring-white/20"
-            }`}
+            className={}
           />
           {errors.email && (
             <p id="email-error" className="mt-1 text-sm text-red-300">
@@ -166,9 +206,7 @@ export default function WaitlistForm() {
             aria-describedby={
               errors.brokerage ? "brokerage-error" : undefined
             }
-            className={`block w-full rounded-lg border-0 px-4 py-3 text-foreground shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-accent sm:text-sm sm:leading-6 ${
-              errors.brokerage ? "ring-red-300" : "ring-white/20"
-            }`}
+            className={}
           />
           {errors.brokerage && (
             <p id="brokerage-error" className="mt-1 text-sm text-red-300">
@@ -190,9 +228,7 @@ export default function WaitlistForm() {
             onChange={(e) => handleChange("zip", e.target.value)}
             aria-invalid={errors.zip ? "true" : "false"}
             aria-describedby={errors.zip ? "zip-error" : undefined}
-            className={`block w-full rounded-lg border-0 px-4 py-3 text-foreground shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-accent sm:text-sm sm:leading-6 ${
-              errors.zip ? "ring-red-300" : "ring-white/20"
-            }`}
+            className={}
           />
           {errors.zip && (
             <p id="zip-error" className="mt-1 text-sm text-red-300">
@@ -201,6 +237,13 @@ export default function WaitlistForm() {
           )}
         </div>
       </div>
+
+      {errorMessage && (
+        <p className="mt-4 text-sm text-red-300 text-center">
+          {errorMessage}
+        </p>
+      )}
+
       <div className="mt-6">
         <button
           type="submit"
