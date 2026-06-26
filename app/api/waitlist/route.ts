@@ -21,10 +21,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Brokerage is required' }, { status: 400 })
     }
 
-    const nameParts = name.trim().split(' ')
-    const firstName = nameParts[0]
-    const lastName = nameParts.slice(1).join(' ') || ''
-
     const apiKey = process.env.AGNTCS_API_KEY
     if (!apiKey) {
       console.error('AGNTCS_API_KEY not configured')
@@ -32,13 +28,10 @@ export async function POST(req: NextRequest) {
     }
 
     const crmPayload = {
-      firstName,
-      lastName,
+      fullName: name.trim(),
       email: email.trim().toLowerCase(),
       company: brokerage.trim(),
-      status: 'waitlist',
       source: 'landing_page',
-      tags: ['waitlist', 'landing_page'],
       notes: zip ? `ZIP code of interest: ${zip}` : 'Waitlist signup from landing page',
     }
 
