@@ -13,6 +13,7 @@ interface FormErrors {
   email?: string
   brokerage?: string
   zipCode?: string
+  submit?: string
 }
 
 export default function Home() {
