@@ -1,20 +1,22 @@
 {
   "name": "nabrix-waitlist",
   "version": "1.0.0",
-  "private": true,
+  "description": "Nabrix waitlist landing page - AI-powered neighborhood reports for real estate agents",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "^14.2.0",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0"
+    "next": "14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/node": "20.19.43",
-    "@types/react": "18.3.31",
-    "typescript": "5.9.3"
+    "@types/node": "^20.14.9",
+    "@types/react": "^18.3.3",
+    "typescript": "^5.5.2"
   }
 }
