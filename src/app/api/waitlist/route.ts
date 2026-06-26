@@ -42,11 +42,11 @@ export async function POST(req: NextRequest) {
 
     if (apiKey) {
       const crmRes = await fetch(
-        ,
+        `https://www.regently.ai/api/companies/${companyId}/crm/people`,
         {
           method: 'POST',
           headers: {
-            Authorization: ,
+            Authorization: `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
