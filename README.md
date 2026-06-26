@@ -1,42 +1,49 @@
-IyBOYWJyaXggV2FpdGxpc3QgTGFuZGluZyBQYWdlCgpBIGhpZ2gtY29udmVy
-dGluZyB3YWl0bGlzdCBsYW5kaW5nIHBhZ2UgZm9yIE5hYnJpeCwgYnVpbHQg
-d2l0aCBOZXh0LmpzIGFuZCBUYWlsd2luZCBDU1MuCgojIyBTdGFjawoKLSAq
-KkZyYW1ld29yayoqOiBOZXh0LmpzIDE2IChBcHAgUm91dGVyLCBzdGF0aWMg
-ZXhwb3J0KQotICoqU3R5bGluZyoqOiBUYWlsd2luZCBDU1MgNAotICoqTGFu
-Z3VhZ2UqKjogVHlwZVNjcmlwdAotICoqUGFja2FnZSBNYW5hZ2VyKio6IHBu
-cG0KCiMjIEdldHRpbmcgU3RhcnRlZAoKYGBgYmFzaApwbnBtIGluc3RhbGwK
-cG5wbSBkZXYKYGBgCgpPcGVuIFtodHRwOi8vbG9jYWxob3N0OjMwMDBdKGh0
-dHA6Ly9sb2NhbGhvc3Q6MzAwMCkuCgojIyBCdWlsZAoKYGBgYmFzaApwbnBt
-IGJ1aWxkCmBgYAoKU3RhdGljIGZpbGVzIGFyZSBvdXRwdXQgdG8gdGhlIGBk
-aXN0L2AgZGlyZWN0b3J5LgoKIyMgRGVwbG95bWVudAoKVGhpcyBwcm9qZWN0
-IGlzIGNvbmZpZ3VyZWQgZm9yIGF1dG9tYXRpYyBkZXBsb3ltZW50IHRvICoq
-R2l0SHViIFBhZ2VzKiogdmlhIEdpdEh1YiBBY3Rpb25zLiBPbiBldmVyeSBw
-dXNoIHRvIGBtYWluYCwgdGhlIHNpdGUgYnVpbGRzIGFuZCBkZXBsb3lzIGF1
-dG9tYXRpY2FsbHkuCgpUbyBlbmFibGU6CjEuIFB1c2ggdGhpcyByZXBvIHRv
-IEdpdEh1YgoyLiBHbyB0byAqKlNldHRpbmdzIOKGkiBQYWdlcyoqCjMuIFNl
-dCAqKlNvdXJjZSoqIHRvICJHaXRIdWIgQWN0aW9ucyIKCkFsdGVybmF0aXZl
-bHksIGRlcGxveSB0byBWZXJjZWwsIE5ldGxpZnksIG9yIENsb3VkZmxhcmUg
-UGFnZXMgYnkgY29ubmVjdGluZyB0aGUgcmVwb3NpdG9yeS4KCiMjIFByb2pl
-Y3QgU3RydWN0dXJlCgotIGBzcmMvYXBwL3BhZ2UudHN4YCDigJQgTGFuZGlu
-ZyBwYWdlIHdpdGggYWxsIHNlY3Rpb25zCi0gYHNyYy9hcHAvY29tcG9uZW50
-cy9XYWl0bGlzdEZvcm0udHN4YCDigJQgQ2xpZW50LXNpZGUgd2FpdGxpc3Qg
-Zm9ybSB3aXRoIHZhbGlkYXRpb24KLSBgc3JjL2FwcC9sYXlvdXQudHN4YCDi
-gJQgUm9vdCBsYXlvdXQgYW5kIG1ldGFkYXRhCi0gYHNyYy9hcHAvZ2xvYmFs
-cy5jc3NgIOKAlCBHbG9iYWwgc3R5bGVzIGFuZCBUYWlsd2luZCB0aGVtZQot
-IGBuZXh0LmNvbmZpZy50c2Ag4oCUIE5leHQuanMgY29uZmlnIHdpdGggc3Rh
-dGljIGV4cG9ydAoKIyMgU2VjdGlvbnMKCjEuICoqSGVybyoqIOKAlCBIZWFk
-bGluZSwgc3ViaGVhZGxpbmUsIENUQXMKMi4gKipWYWx1ZSBQcm9wb3NpdGlv
-bioqIOKAlCAzIGtleSBiZW5lZml0cwozLiAqKlZpc3VhbCBQcmV2aWV3Kiog
-4oCUIFJlcG9ydCBtb2NrdXAgcGxhY2Vob2xkZXIKNC4gKipTb2NpYWwgUHJv
-b2YqKiDigJQgRm91bmRlciBzdG9yeSBhbmQgdGVzdGltb25pYWwKNS4gKipX
-YWl0bGlzdCBGb3JtKiog4oCUIE5hbWUsIGVtYWlsLCBicm9rZXJhZ2UsIFpJ
-UCBjYXB0dXJlCjYuICoqRm9vdGVyKiog4oCUIExpbmtzIGFuZCBjb3B5cmln
-aHQKCiMjIEZvcm0gQmFja2VuZAoKVGhlIHdhaXRsaXN0IGZvcm0gY3VycmVu
-dGx5IHN1Ym1pdHMgdG8gYSBtb2NrIGVuZHBvaW50LiBXaXJlIGl0IHRvIHRo
-ZSBOYWJyaXggQVBJIG9yIGEgZm9ybSBzZXJ2aWNlIChlLmcuLCBUeXBlZm9y
-bSwgbmF0aXZlIENSTSBlbmRwb2ludCkgYnkgdXBkYXRpbmcgdGhlIGBoYW5k
-bGVTdWJtaXRgIGZ1bmN0aW9uIGluIGBXYWl0bGlzdEZvcm0udHN4YC4KCiMj
-IENSTSBJbnRlZ3JhdGlvbgoKUGVyIE5BQi00MCwgZXZlcnkgc2lnbnVwIHNo
-b3VsZCBjcmVhdGUgYSBQZXJzb24gcmVjb3JkIGluIHRoZSBuYXRpdmUgUmVn
-ZW50aWNzIENSTSB3aXRoOgotIGBzb3VyY2VgOiAibGFuZGluZ19wYWdlIgot
-IGBzdGF0dXNgOiAid2FpdGxpc3QiCg==
+# Nabrix Waitlist Landing Page
+
+High-converting waitlist landing page for Nabrix — AI-generated neighborhood reports for real estate agents.
+
+## Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS 4
+- **Font:** Geist (Vercel)
+- **Icons:** Lucide React
+- **Form backend:** Next.js API Route → AGNTCS CRM
+
+## Local Development
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Environment Variables
+
+Copy `.env.example` to `.env` and fill in:
+
+| Variable | Description |
+|----------|-------------|
+| `AGNTCS_API_KEY` | API key for writing waitlist signups to the native CRM |
+| `AGNTCS_COMPANY_ID` | Nabrix company ID in AGNTCS |
+| `NEXT_PUBLIC_SITE_URL` | Public URL of the deployed site |
+
+## Deployment
+
+This project requires a platform that supports Next.js serverless functions (API routes).
+
+**Recommended:** [Vercel](https://vercel.com)
+1. Import the GitHub repository into Vercel.
+2. Add the environment variables above in Project Settings.
+3. Deploy.
+
+**Alternatives:** Netlify, Railway, or Render also work.
+
+## Build
+
+```bash
+pnpm build
+```
+
+Static pages are pre-rendered. The `/api/waitlist` endpoint runs as a serverless function.

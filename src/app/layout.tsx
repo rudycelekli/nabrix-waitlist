@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
-import Script from "next/script";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -8,26 +7,22 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "Nabrix — AI-Powered Neighborhood Reports for Real Estate Agents",
+  title: "Nabrix — AI Neighborhood Reports for Real Estate Agents",
   description:
-    "Join the waitlist for Nabrix. Generate stunning, branded neighborhood reports in seconds using AI. Save hours of research and impress your clients.",
-  keywords: [
-    "real estate",
-    "neighborhood reports",
-    "AI reports",
-    "real estate marketing",
-    "Nabrix",
-  ],
+    "Join the waitlist for Nabrix. Generate branded, magazine-quality neighborhood intelligence reports in seconds. AI-powered market insights for top-performing real estate agents.",
   openGraph: {
-    title: "Nabrix — AI-Powered Neighborhood Reports",
+    title: "Nabrix — AI Neighborhood Reports for Real Estate Agents",
     description:
-      "Generate stunning, branded neighborhood reports in seconds. Join the waitlist.",
+      "Join the waitlist for Nabrix. Generate branded, magazine-quality neighborhood intelligence reports in seconds.",
     type: "website",
   },
 };
-
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export default function RootLayout({
   children,
@@ -35,26 +30,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geistSans.variable}>
-      <head>
-        {GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga-init" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_ID}');
-              `}
-            </Script>
-          </>
-        )}
-      </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+    >
+      <body className="min-h-full flex flex-col bg-white text-slate-900">
+        {children}
+      </body>
     </html>
   );
 }
