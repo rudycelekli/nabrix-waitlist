@@ -91,6 +91,15 @@ export default function WaitlistForm() {
         return;
       }
 
+      // GA4 conversion event
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "waitlist_signup", {
+          event_category: "engagement",
+          event_label: "waitlist",
+          value: 1,
+        });
+      }
+
       setSubmitted(true);
     } catch (err) {
       setErrorMessage("Network error. Please check your connection and try again.");
