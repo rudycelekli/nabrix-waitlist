@@ -51,6 +51,11 @@ export default function Hero({ onCtaClick }: HeroProps) {
           <p className="mt-4 text-sm text-slate-400">
             Free for early-access agents. No credit card required.
           </p>
+          <p className="mt-3 text-sm">
+            <a href="/interview" className="text-teal underline underline-offset-4 hover:text-teal-light transition">
+              Real estate agent? Shape the future of Nabrix — join a 30-min research interview and get free lifetime access →
+            </a>
+          </p>
         </div>
       </div>
 
